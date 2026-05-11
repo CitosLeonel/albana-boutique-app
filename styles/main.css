@@ -21,18 +21,6 @@
   --t:         .22s cubic-bezier(.4,0,.2,1);
 }
 
-[data-theme="dark"] {
-  --cream:     #111827;
-  --cream2:    #1f2937;
-  --ink:       #f3f4f6;
-  --ink2:      #e5e7eb;
-  --white:     #1f2937;
-  --card-bg:   #1f2937;
-  --border-col: #374151;
-  --shadow:    0 4px 24px rgba(0,0,0,.35);
-  --shadow-lg: 0 8px 40px rgba(0,0,0,.5);
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
