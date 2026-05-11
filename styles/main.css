@@ -1,0 +1,66 @@
+/* ============================================================
+   main.css — Variables CSS, reset y estilos base
+   ============================================================ */
+
+:root {
+  --ink:       #1a1a2e;
+  --ink2:      #2d2d4a;
+  --cream:     #f5f0e8;
+  --cream2:    #ede6d6;
+  --gold:      #c9a84c;
+  --gold2:     #e8c97a;
+  --rose:      #c0616b;
+  --sage:      #5f8a72;
+  --white:     #fff;
+  --card-bg:   #fff;
+  --border-col: var(--cream2);
+  --shadow:    0 4px 24px rgba(26,26,46,.10);
+  --shadow-lg: 0 8px 40px rgba(26,26,46,.18);
+  --r:         14px;
+  --r-sm:      8px;
+  --t:         .22s cubic-bezier(.4,0,.2,1);
+}
+
+[data-theme="dark"] {
+  --cream:     #111827;
+  --cream2:    #1f2937;
+  --ink:       #f3f4f6;
+  --ink2:      #e5e7eb;
+  --white:     #1f2937;
+  --card-bg:   #1f2937;
+  --border-col: #374151;
+  --shadow:    0 4px 24px rgba(0,0,0,.35);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background .3s, color .3s;
+}
+
+/* ── Tipografía de marca ── */
+.brand-logo   { line-height: 1; }
+.brand-albana { font-family: 'Nunito', sans-serif; font-weight: 900; letter-spacing: -.5px; color: inherit; }
+.brand-boutique {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  display: block;
+}
+
+/* ── Utilidades ── */
+.text-muted  { color: #bbb; font-size: .82rem; }
+.fw-600      { font-weight: 600; }
+.color-rose  { color: var(--rose); }
+.color-sage  { color: var(--sage); }

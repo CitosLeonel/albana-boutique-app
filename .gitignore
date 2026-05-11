@@ -1,0 +1,19 @@
+# Dependencias
+node_modules/
+
+# Variables de entorno — NUNCA al repo
+.env
+.env.local
+.env.production
+
+# Build de Vite
+dist/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp

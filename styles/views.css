@@ -1,0 +1,42 @@
+/* ============================================================
+   views.css — Stats grid, stock grid, caja chart
+   ============================================================ */
+
+/* ── Stats cards ── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 13px;
+  margin-bottom: 22px;
+}
+.stat-card        { background: var(--card-bg); border-radius: var(--r); padding: 16px; box-shadow: var(--shadow); transition: transform var(--t); }
+.stat-card:hover  { transform: translateY(-2px); }
+.stat-icon        { font-size: 1.3rem; margin-bottom: 6px; }
+.stat-label       { font-size: .7rem; font-weight: 600; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
+.stat-value       { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--ink); margin: 3px 0 1px; }
+.stat-sub         { font-size: .76rem; color: #ccc; }
+
+/* ── Stock grid ── */
+.stock-grid         { display: grid; grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); gap: 13px; }
+.stock-card         { background: var(--card-bg); border-radius: var(--r); padding: 15px; box-shadow: var(--shadow); transition: transform var(--t); cursor: pointer; }
+.stock-card:hover   { transform: translateY(-2px); }
+.stock-card-name    { font-weight: 600; font-size: .91rem; margin-bottom: 2px; }
+.stock-card-cat     { font-size: .71rem; color: #bbb; margin-bottom: 10px; }
+.stock-bar-wrap     { display: flex; align-items: center; gap: 6px; }
+.stock-bar-bg       { flex: 1; height: 5px; background: var(--cream2); border-radius: 3px; overflow: hidden; }
+.stock-bar-fill     { height: 100%; border-radius: 3px; transition: width .5s ease; }
+.stock-qty          { font-size: .76rem; font-weight: 700; color: var(--ink); white-space: nowrap; }
+.stock-price        { font-size: .79rem; color: var(--sage); font-weight: 600; margin-top: 6px; }
+
+/* ── Caja chart ── */
+.cf-chart     { background: var(--card-bg); border-radius: var(--r); padding: 20px; box-shadow: var(--shadow); margin-bottom: 16px; }
+.cf-chart h3  { font-family: 'DM Serif Display', serif; font-size: 1.06rem; margin-bottom: 12px; }
+.bar-chart    { display: flex; align-items: flex-end; gap: 4px; height: 100px; margin-top: 6px; }
+.bar-wrap     { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.bar          { width: 100%; border-radius: 3px 3px 0 0; min-height: 3px; cursor: pointer; }
+.bar:hover    { opacity: .72; }
+.bar-lbl      { font-size: .62rem; color: #ccc; text-align: center; }
+.cf-totals    { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--cream2); }
+.cf-total-item  { display: flex; flex-direction: column; gap: 2px; }
+.cf-total-label { font-size: .68rem; color: #bbb; text-transform: uppercase; letter-spacing: .5px; }
+.cf-total-val   { font-family: 'DM Serif Display', serif; font-size: 1.35rem; }
