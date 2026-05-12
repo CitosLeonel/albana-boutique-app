@@ -7,10 +7,10 @@
 
 -- Helper: devuelve true si el usuario autenticado es admin
 create or replace function is_admin()
-returns boolean language sql security definer as $$
-  select exists (
-    select 1 from user_profiles
-    where id = auth.uid() and role = 'admin'
+returns boolean language sql security definer stable as $$
+  select coalesce(
+    current_setting('request.jwt.claims', true)::json->>'role' = 'admin',
+    false
   );
 $$;
 
