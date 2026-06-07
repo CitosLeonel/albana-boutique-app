@@ -1,5 +1,4 @@
 /* ============================================================
-   src/components/modals.js
    Apertura / cierre de modales y lógica de pre-poblado.
    ============================================================ */
 
@@ -11,6 +10,7 @@ function openModal(id) {
   if (id === 'ventaModal')   populateVentaModal();
   if (id === 'compraModal')  populateCompraModal();
   if (id === 'ajusteModal')  populateAjusteModal(null);
+  if (id === 'compraModal' || id === 'productoModal') populateCategorias();
   document.getElementById(id).classList.add('open');
 }
 
@@ -100,4 +100,29 @@ function onAjusteProd() {
 function openAjusteForProd(id) {
   populateAjusteModal(id);
   document.getElementById('ajusteModal').classList.add('open');
+}
+
+// Llena los selects de categoría al abrir modales
+function populateCategorias() {
+  const selIds = ['cCategoria', 'pCategoria'];
+  selIds.forEach(id => {
+    const sel = document.getElementById(id);
+    if (!sel) return;
+    sel.innerHTML = Object.keys(CATEGORIAS)
+      .map(cat => `<option value="${cat}">${cat}</option>`)
+      .join('');
+    // Disparar el change para que se llene la subcategoría inicial
+    sel.dispatchEvent(new Event('change'));
+  });
+}
+
+// Cuando cambia la categoría, actualiza las subcategorías
+function onCategoriaChange(catId, subId) {
+  const cat = document.getElementById(catId)?.value;
+  const sub = document.getElementById(subId);
+  if (!sub || !cat) return;
+  const subs = CATEGORIAS[cat] || [];
+  sub.innerHTML = subs
+    .map(s => `<option value="${s}">${s}</option>`)
+    .join('');
 }

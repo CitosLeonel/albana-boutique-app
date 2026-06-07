@@ -56,6 +56,7 @@ async function saveCompra() {
       const np = await insert('productos', {
         nombre,
         categoria:  document.getElementById('cCategoria').value,
+        subcategoria: document.getElementById('cSubcategoria').value,
         stock:      cant,
         costo,
         precio:     parseFloat(document.getElementById('cPrecioVenta').value) || costo * 2,

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Albana Boutique — ERP</title>
+    <script src="src/config/categorias.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Nunito:wght@400;700;800;900&family=Cormorant+Garamond:wght@300;400;500&display=swap"
@@ -515,14 +516,14 @@
             </div>
             <div class="fg">
               <label>Categoría</label>
-              <select id="cCategoria">
-                <option>Remeras</option>
-                <option>Pantalones</option>
-                <option>Vestidos</option>
-                <option>Camperas</option>
-                <option>Accesorios</option>
-                <option>Otro</option>
-              </select>
+              <select
+                id="cCategoria"
+                onchange="onCategoriaChange('cCategoria', 'cSubcategoria')"
+              ></select>
+            </div>
+            <div class="fg">
+              <label>Subcategoría</label>
+              <select id="cSubcategoria"></select>
             </div>
           </div>
         </div>
@@ -572,14 +573,14 @@
         <div class="form-row">
           <div class="fg">
             <label>Categoría</label>
-            <select id="pCategoria">
-              <option>Remeras</option>
-              <option>Pantalones</option>
-              <option>Vestidos</option>
-              <option>Camperas</option>
-              <option>Accesorios</option>
-              <option>Otro</option>
-            </select>
+            <select
+              id="pCategoria"
+              onchange="onCategoriaChange('pCategoria', 'pSubcategoria')"
+            ></select>
+          </div>
+          <div class="fg">
+            <label>Subcategoría</label>
+            <select id="pSubcategoria"></select>
           </div>
           <div class="fg">
             <label>Stock inicial</label

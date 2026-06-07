@@ -68,6 +68,7 @@ async function saveProducto() {
     await insert('productos', {
       nombre,
       categoria: document.getElementById('pCategoria').value,
+      subcategoria: document.getElementById('cSubcategoria').value,
       stock:     parseInt(document.getElementById('pStock').value)    || 0,
       costo:     parseFloat(document.getElementById('pCosto').value)  || 0,
       precio:    parseFloat(document.getElementById('pPrecio').value) || 0,
